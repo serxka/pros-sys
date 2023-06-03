@@ -1,0 +1,15 @@
+[package]
+name = "pros-sys"
+version = "3.8.0"
+edition = "2021"
+
+[features]
+global_allocator = []
+
+[build-dependencies]
+bindgen = "0.59"
+md-5 = "0.10"
+reqwest = { version = "0.11", features = ["blocking"] }
+zip = { version = "0.5", default-features = false, features = ["deflate"] }
+colored = "2.0.0"
+hex-literal = "0.4.1"
