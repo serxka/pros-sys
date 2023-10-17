@@ -65,7 +65,7 @@ fn download_and_extract() {
 		// println!("cargo:warning=Missing PROS kernel, had to be redownload.");
 
 		// download release file
-		let bytes = match reqwest::blocking::get(&format!(
+		let bytes = match reqwest::blocking::get(format!(
 			"https://github.com/purduesigbots/pros/releases/download/{}/kernel@{}.zip",
 			KERNEL_VER, KERNEL_VER
 		)) {
@@ -95,7 +95,7 @@ fn gather_c_headers() -> Vec<String> {
 
 	// Get the C std headers to make sure types are generated correctly
 	let command = match std::process::Command::new("arm-none-eabi-gcc")
-		.args(&["-E", "-Wp,-v", "-xc", "/dev/null"])
+		.args(["-E", "-Wp,-v", "-xc", "/dev/null"])
 		.output()
 	{
 		Ok(c) => c,
