@@ -25,6 +25,15 @@ mod bindings {
 		pub x_middle_coord: i16,
 		pub y_middle_coord: i16,
 	}
+
+	#[repr(C)]
+	pub struct screen_touch_status_s_t {
+		pub touch_status: u8,
+		pub x: i16,
+		pub y: i16,
+		pub press_count: i32,
+		pub release_count: i32,
+	}
 }
 
 pub use bindings::*;

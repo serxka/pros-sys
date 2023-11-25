@@ -35,7 +35,9 @@ fn main() {
 		.use_core();
 
 	// blacklist stuff as needed
-	bindings = bindings.blocklist_item("vision_object_s_t");
+	bindings = bindings
+		.blocklist_item("vision_object_s_t")
+		.blocklist_item("screen_touch_status_s_t");
 
 	bindings
 		.generate()
